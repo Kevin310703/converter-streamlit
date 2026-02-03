@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env
+.venv/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+
+# Test / coverage
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local artifacts
+*.docx
+*.zip
+*.tmp
