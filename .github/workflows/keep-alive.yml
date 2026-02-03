@@ -1,0 +1,20 @@
+name: Keep Streamlit Awake
+
+on:
+  schedule:
+    - cron: '0 */10 * * *'  # Mỗi 10 giờ (00:00, 10:00, 20:00 UTC)
+  workflow_dispatch:  # Cho phép chạy thủ công
+
+jobs:
+  keep-awake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Empty commit & push
+        run: |
+          git config --global user.name "KeepAlive Bot"
+          git config --global user.email "bot@example.com"
+          git commit --allow-empty -m "Keep alive commit"
+          git push
