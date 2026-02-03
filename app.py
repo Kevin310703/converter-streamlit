@@ -1,7 +1,7 @@
 ﻿import streamlit as st
 from PIL import Image
 try:
-    img = Image.open("assets/static/img/Logo.png")
+    img = Image.open("assets/static/img/icon_logo.png")
 except:
     img = "📄"
 
@@ -30,6 +30,10 @@ st.set_page_config(
     }
 )
 
+HORIZONTAL_LOGO = "assets/static/img/horizontal_logo.png"
+ICON_LOGO = "assets/static/img/icon_logo.png"
+st.logo(HORIZONTAL_LOGO, icon_image=ICON_LOGO, size="large")
+
 pdf_page = st.Page(
     "assets/static/templates/pdf_pages/pdf_to_word.py",
     title="PDF → Word",
@@ -51,7 +55,7 @@ about_page = [
     )
 ]
 
-st.logo("assets/static/img/Logo.png")
+# st.logo("assets/static/img/icon_logo.png")
 pg = st.navigation(
     {
         "Công cụ": conversion_pages,

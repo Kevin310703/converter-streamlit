@@ -2,6 +2,7 @@
 import zipfile
 import streamlit as st
 
+from datetime import datetime
 from app.utils import pdf_to_docx_bytes
 
 st.image("assets/static/img/pdf.png", width=78)
@@ -19,7 +20,7 @@ with st.expander("ℹ️ Hướng dẫn sử dụng", expanded=False):
         - Giữ kết nối ổn định trong khi tải lên và chuyển đổi.  
         - Tên file DOCX sẽ giữ nguyên theo tên PDF gốc.  
     """)
-
+    
 uploaded_files = st.file_uploader(
     "Chọn file PDF", type=["pdf"], accept_multiple_files=True
 )
@@ -81,3 +82,7 @@ if st.button("Chuyển đổi", type="primary", icon=":material/sync:"):
                 file_name="pdf_to_word.zip",
                 mime="application/zip",
             )
+
+
+st.markdown("---")
+st.markdown(f"🚀 **© {datetime.now().year} VIETKIEN**")
