@@ -1,23 +1,23 @@
-name: Keep Streamlit Awake
+# name: Keep Streamlit Awake
 
-on:
-  schedule:
-    - cron: '0 */10 * * *'  # Mỗi 10 giờ (00:00, 10:00, 20:00 UTC)
-  workflow_dispatch:        # Cho phép chạy thủ công từ tab Actions
+# on:
+#   schedule:
+#     - cron: '0 */10 * * *'  # Mỗi 10 giờ (00:00, 10:00, 20:00 UTC)
+#   workflow_dispatch:        # Cho phép chạy thủ công từ tab Actions
 
-permissions:
-  contents: write  # Bắt buộc để push commit
+# permissions:
+#   contents: write  # Bắt buộc để push commit
 
-jobs:
-  keep-awake:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+# jobs:
+#   keep-awake:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v4
 
-      - name: Empty commit & push
-        run: |
-          git config --global user.name "KeepAlive Bot"
-          git config --global user.email "bot@example.com"
-          git commit --allow-empty -m "chore: keep alive commit [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
-          git push origin main
+#       - name: Empty commit & push
+#         run: |
+#           git config --global user.name "KeepAlive Bot"
+#           git config --global user.email "bot@example.com"
+#           git commit --allow-empty -m "chore: keep alive commit [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]"
+#           git push origin main
